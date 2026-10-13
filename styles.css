@@ -195,3 +195,6 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
 .quick-nav{grid-template-columns:repeat(5,minmax(0,1fr))}
 .quick-nav-item .nav-icon-img{display:block;width:25px;height:25px;object-fit:contain;flex:0 0 25px}
 
+
+/* Supplied icon shapes, original navigation active/inactive colors */
+.quick-nav-item .nav-icon-svg{display:block;width:25px;height:25px;flex:0 0 25px;color:inherit}
