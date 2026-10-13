@@ -199,13 +199,16 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
 /* Supplied icon shapes, original navigation active/inactive colors */
 .quick-nav-item .nav-icon-svg{display:block;width:25px;height:25px;flex:0 0 25px;color:inherit}
 
-/* Restore original landing menu card dimensions and spacing (before compact-phone changes). */
-@media(max-width:560px){.page-home .home-menu{padding:54px 38px 0;gap:14px}.page-home .home-menu a{min-height:118px;padding:20px 8px 16px}.page-home .home-menu img{width:45px;height:45px;flex-basis:45px;margin-bottom:14px}}
-@media(max-width:380px){.page-home .home-menu{padding:44px 26px 0;gap:12px}.page-home .home-menu a{min-height:108px}.page-home .home-menu img{width:40px;height:40px;flex-basis:40px;margin-bottom:11px}}
-/* Original floating navigation icon sizing and brown color, not the supplied grey. */
-.quick-nav-item{color:#80614b!important}
-.quick-nav-item.active{color:#694832!important}
-.quick-nav-item .nav-icon-svg{width:19px!important;height:19px!important;flex:0 0 19px!important;color:inherit!important}
-.quick-nav-item .nav-icon-svg :is(path,line,rect,circle,ellipse,polygon,polyline){fill:currentColor;stroke:currentColor}
-.quick-nav-item .nav-icon-svg [fill=none]{fill:none}
-.quick-nav-item .nav-icon-svg [stroke=none]{stroke:none}
+
+/* Landing tiles: responsive side margins, slightly larger cards and a lower position. */
+.page-home .home-menu{box-sizing:border-box;width:100%;padding:clamp(56px,8dvh,76px) clamp(20px,6vw,38px) 28px;gap:clamp(12px,3vw,16px)}
+.page-home .home-menu a{min-height:clamp(126px,17dvh,148px);padding:18px 8px 16px}
+.page-home .home-menu img{width:45px;height:45px;flex-basis:45px;margin-bottom:12px}
+@media(max-width:560px){.page-home .home-menu{padding-top:clamp(56px,8dvh,74px);padding-left:clamp(20px,6vw,34px);padding-right:clamp(20px,6vw,34px)}.page-home .home-menu a{min-height:clamp(120px,17dvh,144px)}}
+@media(max-width:380px){.page-home .home-menu{padding-top:clamp(52px,7dvh,68px);padding-left:20px;padding-right:20px;gap:12px}.page-home .home-menu a{min-height:clamp(116px,17dvh,132px)}.page-home .home-menu img{width:42px;height:42px;flex-basis:42px}}
+/* Icon shapes are unchanged. Set the brown on the actual SVG shapes, not only the link. */
+.quick-nav-item .nav-icon-svg{display:block;width:25px;height:25px;flex:0 0 25px;overflow:hidden}
+.quick-nav-item .nav-icon-svg [fill]:not([fill="none"]){fill:#80614b!important}
+.quick-nav-item .nav-icon-svg [stroke]:not([stroke="none"]){stroke:#80614b!important}
+.quick-nav-item.active .nav-icon-svg [fill]:not([fill="none"]){fill:#694832!important}
+.quick-nav-item.active .nav-icon-svg [stroke]:not([stroke="none"]){stroke:#694832!important}
