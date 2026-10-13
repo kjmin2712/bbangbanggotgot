@@ -173,3 +173,9 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
 .saved-lists .region-filter button.active,.saved-lists .region-filter .region-saved-filter.active{background:#694832;color:#fff;border-color:#694832}
 .saved-lists .saved-lists-head .title-with-help{gap:6px}
 .saved-lists .saved-lists-head .help-button{width:21px;height:21px;min-width:21px;font-size:11px;line-height:1}
+
+/* Landing: all service tiles share the same neutral, unselected appearance */
+.page-home .home-menu a,.page-home .home-menu a.home-menu-region{background:#fff!important;color:#513326!important;border:0!important;box-shadow:0 4px 15px rgba(94,66,52,.10)!important}
+.page-home .home-menu a:focus-visible{outline:3px solid #e8a58b;outline-offset:3px}
+/* Keep uploaded SVG logo sharp at its natural aspect ratio */
+.page-home .home-brand-logo{width:94px;height:auto;aspect-ratio:197/87;object-fit:contain}
