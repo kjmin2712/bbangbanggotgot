@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6bd35">
+  <meta name="description" content="NFC 키링으로 만나는 전국 빵지순례 지도. 지역과 매장명을 검색하고 네이버지도 또는 카카오맵으로 바로 이동하세요.">
+  <title>빵방곳곳 | 전국 빵지순례 지도</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="빵방곳곳 홈"><img class="brand-logo" src="assets/bbangbang-gotgot-logo.png" alt="빵방곡곡"></a>
+  </header>
+
+  <main class="page-carousel" id="page-carousel">
+    <div class="page-track" id="page-track">
+    <section class="page page-home is-active" id="top" aria-label="홈">
+      <div class="home-shell">
+        <img class="home-brand-logo" src="assets/home-logo-v2.svg" alt="빵방곳곳">
+        <div class="home-heading">
+          <p>동네부터 전국 각지까지</p>
+          <h1>오늘은 어떤 빵집을<br>찾아볼까요?</h1>
+        </div>
+        <div class="home-map-scene" aria-hidden="true">
+          <img class="home-middle-group" src="assets/home-middle-group.svg" alt="">
+        </div>
+        <nav class="home-menu" aria-label="주요 서비스">
+          <a class="home-menu-region" href="#saved-lists" data-home-section="saved-lists">
+            <img src="assets/region-icon-v2.svg" alt="" aria-hidden="true"><span>지역추천</span>
+          </a>
+          <a href="#finder" data-home-section="finder">
+            <img src="assets/search-icon-v2.svg" alt="" aria-hidden="true"><span>매장찾기</span>
+          </a>
+          <a href="#bread-cup" data-home-section="bread-cup">
+            <img src="assets/trophy-icon-v2.svg" alt="" aria-hidden="true"><span>빵월드컵</span>
+          </a>
+          <a href="#my-trip" data-home-section="my-trip">
+            <img src="assets/my-record-icon-v2.svg" alt="" aria-hidden="true"><span>나의기록</span>
+          </a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="page saved-lists" id="saved-lists" aria-labelledby="saved-lists-title">
+      <div class="saved-lists-head">
+        <div><p class="eyebrow">지역별 인기 빵집 TOP 5</p><div class="title-with-help"><h2 id="saved-lists-title">전국 빵집 지도</h2><button class="help-button" type="button" data-help="saved-list" aria-label="지역 추천 설명">?</button></div></div>
+        <p>서울 25개 구부터 전국 주요 도시까지, 지역별 인기 빵집 TOP 5를 만나보세요.</p>
+      </div>
+      <div class="region-filter" role="group" aria-label="지역 분류">
+        <button type="button" class="active" data-region-group="전체">전체</button>
+        <button type="button" data-region-group="서울">서울</button>
+        <button type="button" data-region-group="주요 도시">주요 도시</button>
+        <button type="button" data-region-group="저장" class="region-saved-filter">저장한 지역</button>
+      </div>
+      <div class="region-tools"><span class="region-list-caption">네이버 방문자 리뷰 기준</span><div class="region-sort-wrap"><button class="region-sort-trigger" id="region-sort-trigger" type="button" aria-haspopup="true" aria-expanded="false">가나다순 <span aria-hidden="true">⌄</span></button><div class="region-sort-menu" id="region-sort-menu" hidden><button type="button" data-region-sort="alpha" aria-selected="true">가나다순 <span>✓</span></button><button type="button" data-region-sort="saved" aria-selected="false">저장한 지역 우선 <span></span></button></div></div></div>
+      <div class="region-list-grid" id="region-list-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="page my-trip" id="my-trip" aria-labelledby="my-trip-title">
+      <div class="section-head">
+        <div><p class="eyebrow">MY BREAD TRIP</p><div class="title-with-help"><h2 id="my-trip-title">나의 빵지순례</h2><button class="help-button" type="button" data-help="my-trip" aria-label="나의 빵지순례 설명">?</button></div></div>
+        <p>이 기기에 저장돼요</p>
+      </div>
+      <div class="trip-summary">
+        <article class="trip-stat"><span aria-hidden="true">✓</span><div><strong id="stamp-count">0</strong><small>방문 스탬프 <button class="help-button tiny" type="button" data-help="stamp" aria-label="방문 스탬프 설명">?</button></small></div></article>
+        <article class="trip-stat"><span aria-hidden="true">◷</span><div><strong id="recent-count">0</strong><small>최근 본 매장 <button class="help-button tiny" type="button" data-help="recent" aria-label="최근 본 매장 설명">?</button></small></div></article>
+        <article class="trip-stat wish-stat"><span aria-hidden="true">★</span><div><strong id="wish-count">0</strong><small>가고 싶은 빵집 <button class="help-button tiny" type="button" data-help="wishlist" aria-label="가고 싶은 빵집 설명">?</button></small></div></article>
+      </div>
+      <div class="trip-columns">
+        <div><h3>방문한 매장</h3><div class="mini-list" id="stamp-list"></div></div>
+        <div><h3>최근 본 매장</h3><div class="mini-list" id="recent-list"></div></div>
+        <div><h3>가고 싶은 빵집</h3><div class="mini-list" id="wish-list"></div></div>
+      </div>
+    </section>
+
+    <section class="page bread-cup" id="bread-cup" aria-labelledby="bread-cup-title">
+      <div class="bread-cup-shell">
+        <div class="bread-cup-head">
+          <div><p class="eyebrow">TODAY'S BREAD WORLD CUP</p><h2 id="bread-cup-title">오늘의 빵월드컵</h2></div>
+          <div class="bread-cup-round" id="bread-cup-round">16강</div>
+        </div>
+        <p class="bread-cup-intro">둘 중 지금 더 먹고 싶은 빵을 골라 나의 최애 빵을 찾아보세요.</p>
+        <div class="bread-cup-progress" aria-hidden="true"><span id="bread-cup-progress"></span></div>
+        <p class="bread-cup-status" id="bread-cup-status" aria-live="polite">매번 16개의 빵을 랜덤으로 선정합니다.</p>
+        <div class="bread-cup-start" id="bread-cup-start">
+          <div class="bread-cup-preview" aria-hidden="true">
+            <span class="bread-photo" style="--bread-x:0;--bread-y:0"></span>
+            <span class="bread-photo" style="--bread-x:1;--bread-y:1"></span>
+            <span class="bread-photo" style="--bread-x:4;--bread-y:3"></span>
+          </div>
+          <h3>오늘 가장 끌리는 빵은?</h3>
+          <p>지금 더 먹고 싶은 빵을 하나씩 골라주세요.</p>
+          <button id="bread-cup-start-button" type="button">랜덤 16강 시작하기</button>
+        </div>
+        <div class="bread-cup-match" id="bread-cup-match" hidden>
+          <button class="bread-choice" type="button" data-choice="0"><span class="bread-photo"></span><strong></strong><small>이 빵 선택하기</small></button>
+          <span class="bread-cup-vs" aria-hidden="true">VS</span>
+          <button class="bread-choice" type="button" data-choice="1"><span class="bread-photo"></span><strong></strong><small>이 빵 선택하기</small></button>
+        </div>
+        <dialog class="bread-cup-result bread-cup-result-dialog" id="bread-cup-result" aria-labelledby="bread-cup-result-title">
+          <p class="result-crown" aria-hidden="true">♛</p><p class="eyebrow">MY BEST BREAD</p>
+          <h3 id="bread-cup-result-title">오늘의 최애 빵은 <strong id="bread-cup-winner-name"></strong></h3>
+          <span class="bread-photo" id="bread-cup-winner-photo"></span>
+          <p id="bread-cup-result-copy"></p>
+          <div class="bread-cup-result-actions">
+            <button class="bread-cup-confirm" id="bread-cup-confirm" type="button">확인</button>
+            <button id="bread-cup-restart" type="button">다시하기</button>
+          </div>
+        </dialog>
+      </div>
+    </section>
+
+    <section class="page finder" id="finder" aria-labelledby="finder-title">
+      <div class="section-head">
+        <div><p class="eyebrow">BREAD TRIP</p><div class="title-with-help"><h2 id="finder-title">내 취향 빵집 찾기</h2><button class="help-button" type="button" data-help="finder" aria-label="매장 찾기 설명">?</button></div></div>
+        <p id="result-count" aria-live="polite"></p>
+      </div>
+
+      <div class="controls">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="search" type="search" placeholder="빵집 이름이나 지역을 검색하세요" autocomplete="off">
+        </label>
+        <select id="province" aria-label="시도 선택"><option value="">전국</option></select>
+        <select id="district" aria-label="시군구 선택" disabled><option value="">시·군·구 전체</option></select>
+      </div>
+
+      <div class="nearby-box" id="nearby-box">
+        <div class="nearby-start">
+          <div class="nearby-copy"><div class="title-with-help"><strong>오늘의 랜덤 빵집</strong><button class="help-button tiny" type="button" data-help="nearby" aria-label="랜덤 빵집 추천 설명">?</button></div><span>현재 위치 주변에서 오늘 방문할 빵집 한 곳을 골라 드려요.</span></div>
+          <button class="locate-button" id="locate-button" type="button"><span aria-hidden="true">⌖</span> 빵집 추천받기</button>
+        </div>
+        <p class="nearby-status" id="nearby-status" role="status" aria-live="polite" hidden></p>
+        <div class="nearby-results" id="nearby-results" hidden></div>
+        <a class="nearby-all" id="nearby-all" target="_blank" rel="noopener noreferrer" hidden>네이버 지도에서 내 주변 매장 전체 보기 →</a>
+      </div>
+
+      <div id="region-chips" class="chips" aria-label="빠른 지역 선택"></div>
+      <div id="bakery-grid" class="bakery-grid"></div>
+      <div id="empty" class="empty" hidden><span>🥐</span><h3>검색 결과가 없어요</h3><p>다른 매장명이나 지역으로 다시 찾아보세요.</p></div>
+      <button id="more" class="more" type="button">매장 더 보기</button>
+    </section>
+    </div>
+  </main>
+
+  <nav class="quick-nav" aria-label="페이지 빠른 이동">
+    <a class="quick-nav-item active" href="#top" data-section="top" aria-current="page"><span aria-hidden="true">⌂</span><strong>홈</strong></a>
+    <a class="quick-nav-item" href="#saved-lists" data-section="saved-lists"><span aria-hidden="true">★</span><strong>지역 추천</strong></a>
+    <a class="quick-nav-item" href="#my-trip" data-section="my-trip"><span aria-hidden="true">✓</span><strong>나의 기록</strong></a>
+    <a class="quick-nav-item" href="#bread-cup" data-section="bread-cup"><span aria-hidden="true">♛</span><strong>빵월드컵</strong></a>
+    <a class="quick-nav-item" href="#finder" data-section="finder"><span aria-hidden="true">⌕</span><strong>매장 찾기</strong></a>
+  </nav>
+
+  <div class="share-toast" id="share-toast" role="status" aria-live="polite">링크를 복사했어요</div>
+
+  <dialog class="report-dialog" id="report-dialog" aria-labelledby="report-title">
+    <form id="report-form" method="dialog">
+      <button class="dialog-close" type="button" aria-label="닫기">×</button>
+      <p class="eyebrow">STORE REPORT</p>
+      <h2 id="report-title">매장 정보 제보</h2>
+      <p class="report-shop" id="report-shop"></p>
+      <fieldset><legend>어떤 정보가 잘못되었나요?</legend>
+        <label><input type="radio" name="reason" value="폐업" required> 폐업한 매장이에요</label>
+        <label><input type="radio" name="reason" value="주소 오류"> 주소가 달라요</label>
+        <label><input type="radio" name="reason" value="매장명 오류"> 매장명이 달라요</label>
+        <label><input type="radio" name="reason" value="업종 오류"> 업종이 달라요</label>
+        <label><input type="radio" name="reason" value="기타"> 기타</label>
+      </fieldset>
+      <label class="report-detail">추가 내용<textarea name="detail" rows="3" maxlength="300" placeholder="확인에 도움이 되는 내용을 적어주세요"></textarea></label>
+      <p class="report-note">제보 내용은 이 기기에 저장됩니다. 현재 별도의 외부 전송은 이루어지지 않아요.</p>
+      <button class="report-submit" type="submit">제보 내용 저장하기</button>
+    </form>
+  </dialog>
+
+  <dialog class="report-success-dialog" id="report-success-dialog" aria-labelledby="report-success-title" aria-describedby="report-success-message">
+    <div class="report-success-inner">
+      <span class="report-success-icon" aria-hidden="true">✓</span>
+      <p class="eyebrow">REPORT COMPLETE</p>
+      <h2 id="report-success-title">제보가 완료되었어요</h2>
+      <p id="report-success-message">소중한 제보 감사합니다.<br>내용을 확인하고 빠르게 수정하겠습니다.</p>
+      <button class="report-success-confirm" type="button">확인</button>
+    </div>
+  </dialog>
+
+  <dialog class="help-dialog" id="help-dialog" aria-labelledby="help-title">
+    <div class="help-dialog-inner">
+      <button class="dialog-close" type="button" aria-label="닫기">×</button>
+      <p class="eyebrow">HELP</p>
+      <h2 id="help-title"></h2>
+      <div id="help-content"></div>
+      <button class="help-confirm" type="button">확인했어요</button>
+    </div>
+  </dialog>
+
+  <dialog class="region-dialog" id="region-dialog" aria-labelledby="region-dialog-title">
+    <div class="region-dialog-inner">
+      <button class="dialog-close" type="button" aria-label="닫기">×</button>
+      <div class="region-dialog-heading">
+        <div><p class="eyebrow">REGIONAL TOP 5</p><h2 id="region-dialog-title"></h2></div>
+        <button class="region-save-dialog" type="button">☆ 지역 저장하기</button>
+      </div>
+      <p class="region-dialog-note">네이버지도 방문자 리뷰 표시 수 기준 · 동일 브랜드는 대표 지점 1곳</p>
+      <div class="region-top5-list" id="region-top5-list"></div>
+    </div>
+  </dialog>
+
+  <script src="data.js"></script>
+  <script src="regional-top5.js"></script>
+  <script src="app.js"></script>
+  <script src="features.js"></script>
+  <script src="bread-cup.js"></script>
+</body>
+</html>
