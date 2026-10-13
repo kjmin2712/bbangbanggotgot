@@ -183,3 +183,9 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
 /* Landing: lower logo and heading together without altering their spacing */
 .page-home .home-shell{padding-top:48px}
 @media(max-width:560px){.page-home .home-shell{padding-top:46px}}
+
+/* Navigation icons and five-item labels; retain existing floating container */
+.quick-nav-item .nav-icon{display:grid;place-items:center;width:25px;height:25px;line-height:1}
+.quick-nav-item .nav-icon svg{display:block;width:24px;height:24px}
+.quick-nav-item strong{font-family:Pretendard,"Apple SD Gothic Neo",sans-serif;white-space:nowrap;letter-spacing:0}
+@media(max-width:380px){.quick-nav-item strong{font-size:10px}}
