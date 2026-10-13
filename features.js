@@ -122,7 +122,7 @@ const syncRegionSaveButtons = () => {
   if (activeRegion && regionSaveDialog) {
     const saved = isRegionSaved(activeRegion.region);
     regionSaveDialog.classList.toggle('saved', saved);
-    regionSaveDialog.textContent = saved ? '★ 저장됨' : '☆ 지역 저장하기';
+    regionSaveDialog.innerHTML = `<span class="save-icon" aria-hidden="true">${saved ? '★' : '☆'}</span><span class="save-label">${saved ? '저장됨' : '지역 저장하기'}</span>`;
   }
 };
 const toggleRegionSave = region => {
