@@ -200,14 +200,21 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
 .quick-nav-item .nav-icon-svg{display:block;width:25px;height:25px;flex:0 0 25px;color:inherit}
 
 
-/* Landing tiles: responsive side margins, slightly larger cards and a lower position. */
-.page-home .home-menu{box-sizing:border-box;width:100%;padding:clamp(56px,8dvh,76px) clamp(20px,6vw,38px) 28px;gap:clamp(12px,3vw,16px)}
-.page-home .home-menu a{min-height:clamp(126px,17dvh,148px);padding:18px 8px 16px}
-.page-home .home-menu img{width:45px;height:45px;flex-basis:45px;margin-bottom:12px}
-@media(max-width:560px){.page-home .home-menu{padding-top:clamp(56px,8dvh,74px);padding-left:clamp(20px,6vw,34px);padding-right:clamp(20px,6vw,34px)}.page-home .home-menu a{min-height:clamp(120px,17dvh,144px)}}
-@media(max-width:380px){.page-home .home-menu{padding-top:clamp(52px,7dvh,68px);padding-left:20px;padding-right:20px;gap:12px}.page-home .home-menu a{min-height:clamp(116px,17dvh,132px)}.page-home .home-menu img{width:42px;height:42px;flex-basis:42px}}
-/* Icon shapes are unchanged. Set the brown on the actual SVG shapes, not only the link. */
-.quick-nav-item .nav-icon-svg{display:block;width:25px;height:25px;flex:0 0 25px;overflow:hidden}
+/* Reference: third supplied screenshot. Keep card width; reduce only card height and lift slightly from reference. */
+@media(max-width:560px){
+ .page-home .home-shell{padding-top:46px}
+ .page-home .home-map-scene{height:174px;margin-top:clamp(100px,15dvh,150px)}
+ .page-home .home-menu{padding:clamp(70px,10dvh,100px) clamp(26px,9vw,38px) 22px;gap:14px}
+ .page-home .home-menu a{min-height:clamp(100px,13dvh,116px);padding:12px 8px 10px}
+ .page-home .home-menu img{width:42px;height:42px;flex-basis:42px;margin-bottom:9px}
+}
+@media(max-width:380px){
+ .page-home .home-map-scene{height:158px;margin-top:clamp(85px,13dvh,125px)}
+ .page-home .home-menu{padding:clamp(60px,9dvh,85px) 26px 20px;gap:12px}
+ .page-home .home-menu a{min-height:100px}
+}
+/* Set the actual inline SVG artwork to the existing brown navigation palette. */
+.quick-nav-item .nav-icon-svg{display:block;width:25px;height:25px;flex:0 0 25px}
 .quick-nav-item .nav-icon-svg [fill]:not([fill="none"]){fill:#80614b!important}
 .quick-nav-item .nav-icon-svg [stroke]:not([stroke="none"]){stroke:#80614b!important}
 .quick-nav-item.active .nav-icon-svg [fill]:not([fill="none"]){fill:#694832!important}
