@@ -213,9 +213,11 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
  .page-home .home-menu{padding:clamp(60px,9dvh,85px) 26px 20px;gap:12px}
  .page-home .home-menu a{min-height:100px}
 }
-/* Set the actual inline SVG artwork to the existing brown navigation palette. */
+/* Preserve white star, pin hole and notebook details in the original SVG. */
 .quick-nav-item .nav-icon-svg{display:block;width:25px;height:25px;flex:0 0 25px}
-.quick-nav-item .nav-icon-svg [fill]:not([fill="none"]){fill:#80614b!important}
-.quick-nav-item .nav-icon-svg [stroke]:not([stroke="none"]){stroke:#80614b!important}
-.quick-nav-item.active .nav-icon-svg [fill]:not([fill="none"]){fill:#694832!important}
-.quick-nav-item.active .nav-icon-svg [stroke]:not([stroke="none"]){stroke:#694832!important}
+.quick-nav-item .nav-icon-svg [fill="white"]{fill:#fff!important}
+.quick-nav-item .nav-icon-svg [stroke="white"]{stroke:#fff!important}
+.quick-nav-item .nav-icon-svg [fill="#80614B"],.quick-nav-item .nav-icon-svg [fill="#80614b"]{fill:#80614b!important}
+.quick-nav-item .nav-icon-svg [stroke="#80614B"],.quick-nav-item .nav-icon-svg [stroke="#80614b"]{stroke:#80614b!important}
+.quick-nav-item.active .nav-icon-svg [fill="#80614B"],.quick-nav-item.active .nav-icon-svg [fill="#80614b"]{fill:#694832!important}
+.quick-nav-item.active .nav-icon-svg [stroke="#80614B"],.quick-nav-item.active .nav-icon-svg [stroke="#80614b"]{stroke:#694832!important}
