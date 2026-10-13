@@ -154,3 +154,9 @@ body{font-weight:400} .saved-lists :is(h1,h2,h3,strong){font-weight:700}
 .topbar{background:rgba(255,255,255,.15)!important;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid rgba(120,83,51,.12)}
 .topbar .brand-logo{width:78px!important;height:auto!important;max-height:40px!important;object-fit:contain}
 @media(max-width:760px){.topbar .brand-logo{width:72px!important;max-height:38px!important}}
+
+/* Overlay header: transparency reveals the page underneath */
+body:not(.is-home) .topbar{position:fixed!important;top:0;left:0;right:0;z-index:100;box-sizing:border-box;background:rgba(255,255,255,.15)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body:not(.is-home) .page-carousel{height:100dvh!important}
+body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important}
+@media(min-width:761px){body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 68px)!important}}
