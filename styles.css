@@ -189,3 +189,11 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
 .quick-nav-item .nav-icon svg{display:block;width:24px;height:24px}
 .quick-nav-item strong{font-family:Pretendard,"Apple SD Gothic Neo",sans-serif;white-space:nowrap;letter-spacing:0}
 @media(max-width:380px){.quick-nav-item strong{font-size:10px}}
+
+/* Render the user's exact navigation SVG; invisible link hit areas retain functionality. */
+.quick-nav.quick-nav-original{grid-template-columns:repeat(5,minmax(0,1fr))!important;align-items:stretch;position:fixed;isolation:isolate;overflow:hidden;box-sizing:border-box;width:min(calc(100vw - 20px),520px);height:auto;aspect-ratio:375 / 60;padding:0!important;background:#fff!important;border-radius:20px;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.quick-nav-original .quick-nav-art{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:fill;pointer-events:none;z-index:0}
+.quick-nav-original .quick-nav-item{position:relative;z-index:1;min-height:0!important;height:100%;width:100%;padding:0;margin:0;border:0;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:transparent!important;transform:none!important}
+.quick-nav-original .quick-nav-item.active,.quick-nav-original .quick-nav-item:active{background:transparent!important;color:transparent!important;transform:none!important}
+.quick-nav-original .nav-accessible-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.quick-nav-original .quick-nav-item:focus-visible{outline:2px solid #8d6b50;outline-offset:-3px}
