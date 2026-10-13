@@ -179,3 +179,7 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
 .page-home .home-menu a:focus-visible{outline:3px solid #e8a58b;outline-offset:3px}
 /* Keep uploaded SVG logo sharp at its natural aspect ratio */
 .page-home .home-brand-logo{width:94px;height:auto;aspect-ratio:197/87;object-fit:contain}
+
+/* Landing: lower logo and heading together without altering their spacing */
+.page-home .home-shell{padding-top:48px}
+@media(max-width:560px){.page-home .home-shell{padding-top:46px}}
