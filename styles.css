@@ -149,3 +149,8 @@ body{font-weight:400} .saved-lists :is(h1,h2,h3,strong){font-weight:700}
 .topbar{background:rgba(255,253,247,.76)}
 .quick-nav{background:rgba(255,253,247,.76);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .saved-lists .region-card{background:rgba(255,254,250,.76)}
+
+/* Header: compact logo and clearly translucent white background */
+.topbar{background:rgba(255,255,255,.48)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.topbar .brand-logo{width:78px!important;height:auto!important;max-height:40px!important;object-fit:contain}
+@media(max-width:760px){.topbar .brand-logo{width:72px!important;max-height:38px!important}}
