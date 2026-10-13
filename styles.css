@@ -221,3 +221,15 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
 .quick-nav-item .nav-icon-svg [stroke="#80614B"],.quick-nav-item .nav-icon-svg [stroke="#80614b"]{stroke:#80614b!important}
 .quick-nav-item.active .nav-icon-svg [fill="#80614B"],.quick-nav-item.active .nav-icon-svg [fill="#80614b"]{fill:#694832!important}
 .quick-nav-item.active .nav-icon-svg [stroke="#80614B"],.quick-nav-item.active .nav-icon-svg [stroke="#80614b"]{stroke:#694832!important}
+
+/* Regional TOP 5 modal: quieter typography and bookmark action. Map links unchanged. */
+.region-dialog .region-dialog-inner{padding:26px 22px 22px}
+.region-dialog .dialog-close{display:grid;place-items:center;width:36px;height:36px;border:0;border-radius:50%;background:#f4eee6;color:#6c4a36;font-size:24px;line-height:1}
+.region-dialog .region-dialog-heading{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding-right:40px}
+.region-dialog .region-dialog-heading .eyebrow{margin:0;color:#a07859;font-family:"Pretendard","Noto Sans KR",sans-serif;font-size:.76rem;font-weight:600;letter-spacing:0}
+.region-dialog .region-dialog-heading h2{margin:3px 0 0;font-family:"Pretendard","Noto Sans KR",sans-serif;font-size:clamp(1.45rem,5.5vw,1.85rem);font-weight:750;line-height:1.35;letter-spacing:-.035em;color:#3c2a21}
+.region-dialog .region-save-dialog{display:inline-flex;align-items:center;gap:7px;min-height:36px;margin:0;padding:0 13px;border:1px solid #dfcdbb;border-radius:10px;background:#fffdf9;color:#76563e;font-family:"Pretendard","Noto Sans KR",sans-serif;font-size:.82rem;font-weight:600;box-shadow:none}
+.region-dialog .region-save-dialog .save-icon{font-size:1.04rem;line-height:1;font-weight:400}
+.region-dialog .region-save-dialog.saved{border-color:#d6b58d;background:#f7eddf;color:#694832}
+.region-dialog .region-dialog-note{margin:16px 0 18px;color:#8b7a6c;font-size:.76rem;line-height:1.5;word-break:keep-all}
+@media(max-width:560px){.region-dialog .region-dialog-inner{padding:24px 18px 18px}.region-dialog .region-dialog-heading{padding-right:38px;gap:12px}.region-dialog .region-dialog-heading h2{font-size:1.55rem}.region-dialog .region-dialog-note{margin:15px 0 18px}}
