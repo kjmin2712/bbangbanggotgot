@@ -250,3 +250,9 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
 .region-dialog .region-save-dialog.saved{border-color:#d6b58d;background:#f7eddf;color:#694832}
 .region-dialog .region-dialog-note{margin:16px 0 18px;color:#8b7a6c;font-size:.76rem;line-height:1.5;word-break:keep-all}
 @media(max-width:560px){.region-dialog .region-dialog-inner{padding:24px 18px 18px}.region-dialog .region-dialog-heading{padding-right:38px;gap:12px}.region-dialog .region-dialog-heading h2{font-size:1.55rem}.region-dialog .region-dialog-note{margin:15px 0 18px}}
+
+/* Compact the illustrated strip itself (not only the menu spacing). */
+.page-home .home-map-scene{height:clamp(88px,12dvh,125px)!important;margin-top:0!important;overflow:hidden}
+.page-home .home-middle-group{width:100%;height:100%;object-fit:cover;object-position:center bottom;bottom:0}
+.page-home .home-menu{padding-top:12px!important}
+@media(max-width:560px){.page-home .home-map-scene{height:clamp(82px,12dvh,110px)!important}.page-home .home-menu{padding-top:10px!important}}
