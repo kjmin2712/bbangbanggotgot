@@ -213,23 +213,6 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
  .page-home .home-menu{padding:clamp(28px,4dvh,44px) 26px 20px;gap:12px}
  .page-home .home-menu a{min-height:100px}
 }
-/* Fit all four landing cards on the initial viewport: remove excess blank space, preserve two-column layout. */
-.page-home .home-shell{min-height:100dvh;padding-bottom:12px}
-.page-home .home-map-scene{margin-top:clamp(12px,2.5dvh,24px)}
-.page-home .home-menu{padding-top:clamp(12px,2.5dvh,24px);padding-bottom:12px}
-@media(max-width:560px){
- .page-home .home-shell{padding-top:clamp(18px,3dvh,34px)}
- .page-home .home-heading{padding-top:clamp(12px,2dvh,20px)}
- .page-home .home-map-scene{height:clamp(115px,18dvh,158px);margin-top:clamp(12px,2dvh,20px)}
- .page-home .home-menu{padding:clamp(10px,1.8dvh,18px) clamp(20px,6vw,34px) 12px;gap:clamp(10px,1.5dvh,14px)}
- .page-home .home-menu a{min-height:clamp(90px,13dvh,112px);padding:10px 8px}
- .page-home .home-menu img{width:clamp(34px,5dvh,42px);height:clamp(34px,5dvh,42px);flex-basis:clamp(34px,5dvh,42px);margin-bottom:8px}
-}
-@media(max-width:380px){
- .page-home .home-map-scene{height:clamp(105px,16dvh,142px);margin-top:12px}
- .page-home .home-menu{padding:12px 20px 10px;gap:10px}
- .page-home .home-menu a{min-height:clamp(86px,12dvh,102px)}
-}
 /* Preserve white star, pin hole and notebook details in the original SVG. */
 .quick-nav-item .nav-icon-svg{display:block;width:25px;height:25px;flex:0 0 25px}
 .quick-nav-item .nav-icon-svg [fill="white"]{fill:#fff!important}
@@ -251,8 +234,3 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
 .region-dialog .region-dialog-note{margin:16px 0 18px;color:#8b7a6c;font-size:.76rem;line-height:1.5;word-break:keep-all}
 @media(max-width:560px){.region-dialog .region-dialog-inner{padding:24px 18px 18px}.region-dialog .region-dialog-heading{padding-right:38px;gap:12px}.region-dialog .region-dialog-heading h2{font-size:1.55rem}.region-dialog .region-dialog-note{margin:15px 0 18px}}
 
-/* Illustration strip: halfway between the original and the overly compressed version. */
-.page-home .home-map-scene{height:clamp(102px,15dvh,142px)!important;margin-top:clamp(6px,1dvh,10px)!important;overflow:hidden}
-.page-home .home-middle-group{width:100%;height:100%;object-fit:cover;object-position:center bottom;bottom:0}
-.page-home .home-menu{padding-top:12px!important}
-@media(max-width:560px){.page-home .home-map-scene{height:clamp(99px,15dvh,134px)!important}.page-home .home-menu{padding-top:10px!important}}
