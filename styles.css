@@ -235,4 +235,4 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
 @media(max-width:560px){.region-dialog .region-dialog-inner{padding:24px 18px 18px}.region-dialog .region-dialog-heading{padding-right:38px;gap:12px}.region-dialog .region-dialog-heading h2{font-size:1.55rem}.region-dialog .region-dialog-note{margin:15px 0 18px}}
 
 /* Move only the four landing menu cards up by exactly 20px. */
-.page-home .home-menu{transform:translateY(-60px)}
+.page-home .home-menu{transform:translateY(-120px)}
