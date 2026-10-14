@@ -234,5 +234,14 @@ body:not(.is-home) .page:not(.page-home){padding-top:calc(34px + 60px)!important
 .region-dialog .region-dialog-note{margin:16px 0 18px;color:#8b7a6c;font-size:.76rem;line-height:1.5;word-break:keep-all}
 @media(max-width:560px){.region-dialog .region-dialog-inner{padding:24px 18px 18px}.region-dialog .region-dialog-heading{padding-right:38px;gap:12px}.region-dialog .region-dialog-heading h2{font-size:1.55rem}.region-dialog .region-dialog-note{margin:15px 0 18px}}
 
-/* Position landing cards 110px above original, without covering the illustration. */
-.page-home .home-menu{transform:translateY(-110px);background:transparent}
+/* Move the illustration and cards together, so cards never overlap or crop the SVG. */
+.page-home .home-menu{transform:none;background:#fdfaf7}
+.page-home .home-map-scene{margin-top:0}
+@media(max-width:560px){
+ .page-home .home-map-scene{margin-top:clamp(0px,calc(15dvh - 110px),40px)}
+}
+@media(max-width:380px){
+ .page-home .home-map-scene{margin-top:clamp(0px,calc(13dvh - 110px),15px)}
+}
+.page-home .home-middle-group{width:100%;height:auto;object-fit:contain}
+
